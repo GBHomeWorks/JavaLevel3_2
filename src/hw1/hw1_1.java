@@ -1,9 +1,11 @@
 package hw1;
 
+import javax.swing.*;
 import java.util.ArrayList;
 
 
 public class hw1_1 {
+//    ----------------- задания 1 и 2 ------------------------------------------------
     //    Создание массива и служебных переменных
     static Integer a = 3;
     static Integer b = 4;
@@ -25,8 +27,10 @@ public class hw1_1 {
             arrMassive.add(i);
         }
     }
+//    -------------  окончание заданий 1 и 2 -----------------------------------------------
 
     public static void main(String[] args) {
+//        ----------------- задания 1 и 2 ---------------------------------------------------
 //      печать исходного массива
         for (int i = 0; i < massive.length; i++) {
             System.out.print(massive[i] + " ");
@@ -43,5 +47,9 @@ public class hw1_1 {
 //      печать коллекции
         System.out.println();
         System.out.println(arrMassive);
+//        ----------- окончание заданий 1 и 2 -----------------------------------------------
+//        ----------------- задание 3 ---------------------------------------------------
+
+        Fruit<Integer, Float> apple = new Fruit<>(1, 1.0f);
     }
 }
