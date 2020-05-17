@@ -31,14 +31,14 @@ public class hw1_1 {
 
     public static void main(String[] args) {
 //        ----------------- задания 1 и 2 ---------------------------------------------------
-//      печать исходного массива
+//   печать исходного массива
         for (int i = 0; i < massive.length; i++) {
             System.out.print(massive[i] + " ");
         }
 
         System.out.println();
         repositionElements();
-//      печать результата замены элементов
+//   печать результата замены элементов
         for (int i = 0; i < massive.length; i++) {
             System.out.print(massive[i] + " ");
         }
@@ -50,6 +50,41 @@ public class hw1_1 {
 //        ----------- окончание заданий 1 и 2 -----------------------------------------------
 //        ----------------- задание 3 ---------------------------------------------------
 
-        Fruit<Integer, Float> apple = new Fruit<>(1, 1.0f);
+//  создание яблок, уклядка в ящик
+        Apple apple = new Apple("apple");
+        Box appleBox = new Box();   // create Box
+        for(int i = 0; i < 15; i++){    // apples put in box
+            appleBox.fruits.add(apple);
+        }
+        System.out.println(appleBox.fruits.get(0).getName() + ": appleBox.size: " + appleBox.fruits.size()); // checking
+
+//  создание апельсин, уклядка в ящик
+        Orange orange = new Orange("orange");
+        Box orangeBox = new Box();   // create Box
+        for(int i = 0; i < 10; i++){    // oranges put in box
+            orangeBox.fruits.add(orange);
+        }
+        System.out.println(orangeBox.fruits.get(0).getName() + ": orangeBox.size: " + orangeBox.fruits.size()); // checking
+
+//   Взвешивание кробки яблок
+        System.out.println("название " + appleBox.fruits.get(0).getName() + ": ");
+        System.out.println("вес 1 шт - " + appleBox.fruits.get(0).getWeight() + " количество " + appleBox.fruits.size());
+        System.out.println("взвешивание коробки " + appleBox.getWeight(appleBox));
+        System.out.println("название " + orangeBox.fruits.get(0).getName() + ": ");
+        System.out.println("вес 1 шт - " + orangeBox.fruits.get(0).getWeight() + " количество " + orangeBox.fruits.size());
+        System.out.println("взвешивание коробки " + orangeBox.getWeight(orangeBox));
+
+//   сравнение ящиков по весу
+        System.out.println(orangeBox.compare(appleBox));
+
+//   перекладка фруктов в другой ящик
+        Box orangeBox2 = new Box();
+        for(int i = 0; i < 10; i++){    // oranges put in box
+            orangeBox2.fruits.add(orange);
+        }
+        System.out.println(orangeBox.fruits.get(0).getName() + ": orangeBox.size: " + orangeBox.fruits.size());     // checking
+        System.out.println(orangeBox2.fruits.get(0).getName() + ": orangeBox2.size: " + orangeBox2.fruits.size());  // checking
+        orangeBox.shiftFruits(orangeBox2);
+        System.out.println(orangeBox2.fruits.get(0).getName() + ": orangeBox2.size: " + orangeBox2.fruits.size());  // checking
     }
 }
